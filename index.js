@@ -9,7 +9,7 @@ class Driver {
   trips(){
     return store.trips.filter(function(trip){
       return trip.driverId === this.id;
-    }).bind(this)
+    }.bind(this));
     
   }
 }
@@ -34,6 +34,11 @@ class Trip {
   passenger() {
     return store.passengers.find(function(passenger){
       return passenger.id === this.passengerId;
+    }.bind(this));
+  }
+  driver() {
+    return store.drivers.find(function(passenger){
+      return driver.id === this.driverId;
     }.bind(this));
   }
 }
