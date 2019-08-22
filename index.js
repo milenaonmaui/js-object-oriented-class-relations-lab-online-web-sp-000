@@ -7,8 +7,7 @@ class Driver {
     store.drivers.push(this);
   }
   trips(){
-    return allTrips.filter(function(trip){
-      console.log(this)
+    return store.trips.filter(function(trip){
       return trip.driverId === this.id;
     }).bind(this)
     
@@ -19,7 +18,8 @@ let passengerId=0;
 class Passenger {
   constructor(name){
     this.name=name;
-    this.id=++passengerId;
+    this.id = ++passengerId;
+    store.passengers.push(this);
   }
 }
 
@@ -29,6 +29,6 @@ class Trip {
     this.id = ++ tripId;
     this.driverId = driver.id;
     this.passengerId=passenger.id;
-    allTrips.push(this);
+    store.trips.push(this);
   }
 }
