@@ -14,11 +14,15 @@ class Driver {
   }
   passengers(){
     return this.trips().forEach(function(trip){
-      return store.passengers.find(function(passenger){
-        return passenger.id === trip.passengerId;
-      })
+      return findPassenger(trip.passengerId)
     }.bind(this));
     
+  }
+  findPaseenger(id){
+    return store.passengers.find(function(passenger){
+      return passenger.id === id;
+    })
+  }
   }
 }
 
