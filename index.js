@@ -1,11 +1,19 @@
 let driverId = 0;
+
+let store = {drivers: [], passengers: [], trips: []};
 function findPassenger(id) {
     return store.passengers.find(function(passenger){
       return passenger.id === id;
     })
 }
 
-let store = {drivers: [], passengers: [], trips: []};
+function findDriver(id) {
+    return store.drivers.find(function(driver){
+      return driver.id === id;
+    })
+}
+
+
 class Driver {
   constructor(name){
     this.name=name;
@@ -34,6 +42,18 @@ class Passenger {
     this.name=name;
     this.id = ++passengerId;
     store.passengers.push(this);
+  }
+   trips(){
+    return store.trips.filter(function(trip){
+      return trip.passengerId === this.id;
+    }.bind(this));
+    
+  }
+  drivers(){
+    return this.trips().map(function(trip){
+      return findDriver(trip.driverId)
+    })
+
   }
 }
 
