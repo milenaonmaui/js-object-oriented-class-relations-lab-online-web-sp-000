@@ -4,7 +4,7 @@ class Driver {
   constructor(name){
     this.name=name;
     this.id=++driverId;
-    store.drivers.psh(this);
+    store.drivers.push(this);
   }
   trips(){
     return allTrips.filter(function(trip){
