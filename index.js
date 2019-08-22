@@ -4,6 +4,7 @@ function findPassenger(id) {
       return passenger.id === id;
     })
 }
+
 let store = {drivers: [], passengers: [], trips: []};
 class Driver {
   constructor(name){
@@ -20,8 +21,7 @@ class Driver {
   passengers(){
     return this.trips().forEach(function(trip){
       return findPassenger(trip.passengerId)
-    }.bind(this));
-    
+    });
   }
   
   
