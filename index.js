@@ -18,12 +18,12 @@ class Driver {
     }.bind(this));
     
   }
-  findPaseenger(id){
+  findPassenger(id){
     return store.passengers.find(function(passenger){
       return passenger.id === id;
     })
   }
-  }
+  
 }
 
 let passengerId=0;
