@@ -1,9 +1,10 @@
 let driverId = 0;
-let allTrips = [];
+let store = {drivers: [], passengers: [], trips: []};
 class Driver {
   constructor(name){
     this.name=name;
     this.id=++driverId;
+    store.drivers.psh(this);
   }
   trips(){
     return allTrips.filter(function(trip){
