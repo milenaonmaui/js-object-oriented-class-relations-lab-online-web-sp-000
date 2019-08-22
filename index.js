@@ -1,4 +1,9 @@
 let driverId = 0;
+function findPassenger(id) {
+    return store.passengers.find(function(passenger){
+      return passenger.id === id;
+    })
+}
 let store = {drivers: [], passengers: [], trips: []};
 class Driver {
   constructor(name){
@@ -18,11 +23,7 @@ class Driver {
     }.bind(this));
     
   }
-  findPassenger(id){
-    return store.passengers.find(function(passenger){
-      return passenger.id === id;
-    })
-  }
+  
   
 }
 
