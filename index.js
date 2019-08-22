@@ -20,7 +20,7 @@ class Driver {
   }
   passengers(){
     return this.trips().forEach(function(trip){
-      return findPassenger(trip.passengerId)
+      return trip.passengerId
     });
   }
   
