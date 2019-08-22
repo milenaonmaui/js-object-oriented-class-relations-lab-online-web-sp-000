@@ -19,9 +19,8 @@ class Driver {
     
   }
   passengers(){
-    return this.trips().forEach(function(trip){
-      return trip.passengerId
-    });
+    return this.trips()
+
   }
   
   
