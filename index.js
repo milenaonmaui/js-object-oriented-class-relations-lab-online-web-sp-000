@@ -13,8 +13,10 @@ class Driver {
     
   }
   passengers(){
-    return store.passengers.filter(function(passenger){
-      return passenger.id === this.id;
+    return this.trips().forEach(function(trip){
+      return store.passengers.find(function(passenger){
+        return passenger.id === trip.passengerId;
+      })
     }.bind(this));
     
   }
