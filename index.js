@@ -8,7 +8,7 @@ class Driver {
   trips(){
     return allTrips.filter(function(trip){
       console.log(this)
-      trip.driverId === this.id;
+      return trip.driverId === this.id;
     }).bind(this)
     
   }
