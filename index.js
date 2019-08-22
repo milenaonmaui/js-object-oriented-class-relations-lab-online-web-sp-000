@@ -9,7 +9,7 @@ class Driver {
     return trips.filter(function(trip){
       console.log(this)
       trip.driverId === this.id;
-    })
+    }).bind(this)
     
   }
 }
